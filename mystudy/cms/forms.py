@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from cms.models import Book
+from cms.models import Book, Impression
 
 
 class BookForm(ModelForm):
@@ -8,3 +8,9 @@ class BookForm(ModelForm):
         model = Book
         fields = ('name', 'publisher', 'page', )
 
+
+class ImpressionForm(ModelForm):
+    """感想のフォーム"""
+    class Meta:
+        model = Impression
+        fields = ('comment', )
